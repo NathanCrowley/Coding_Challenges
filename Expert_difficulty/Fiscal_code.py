@@ -2,7 +2,7 @@
 Nathan Crowley 17/7/2020
 
 Given an object containing the personal data of
-        a person object(name, surname, gender and date of birth)
+        a person object "firstname,surname,gender,DOB(DD/MM/YYYY)
 return the 11 code character fiscal code of the entered persons.
 I return as a dictionary with names:fiscal_code as the key_value.
 '''
