@@ -23,10 +23,14 @@ def to_morse(string):
     return '{} --> {}'.format(string,morse_string)
 
 #--------------------------------------TEST-------------------------------
-print(to_morse('EDABBIT CHALLENGE'))
+'''print(to_morse('EDABBIT CHALLENGE'))
 print(to_morse('help me!'))
 print(to_morse('nathan crowley'))
 print(to_morse('up the ra'))
-print(to_morse('TudWRgO9m9'))
-print(to_morse('91NkDYN4Ir'))
-print(to_morse('Tara ruane'))
+print(to_morse('Tara ruane'))'''
+
+#ask user for words to be converted and print the word with its corresponding morse.
+word = input("Enter word to be converted to morse [Enter to exit]>>>")
+while word != '':
+    print(to_morse(word))
+    word = input("Enter word to be converted to morse [Enter to exit]>>>")
