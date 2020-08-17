@@ -68,7 +68,7 @@ def generate_fiscal_code(person):
         Sur_cap_letters+='x'
 #return Sur_cap_letters[:3].upper()
 #print(Sur_cap_letters[:3].upper())
-    fiscal_code+=Sur_cap_letters[:3].upper()
+    fiscal_code+=Sur_cap_letters[:3].upper()    #add the first 3 letters to the fiscal code
 #generate 3 capital letters from firstname
     consonants_count = 0                    #reset the counters
     vowels_count = 0
@@ -102,7 +102,7 @@ def generate_fiscal_code(person):
             Fname_cap_letters+=letter
         Fname_cap_letters+='x'
 #print(Fname_cap_letters[:3].upper())
-    fiscal_code+=Fname_cap_letters[:3].upper()
+    fiscal_code+=Fname_cap_letters[:3].upper()                  #add to fiscal code
 #generate 2 numbers, 1 letter , 2 numbers from DOB and gender
     '''(2 numbers)take last two digits of DOB year'''
     date = person.get_DOB()
@@ -114,7 +114,7 @@ def generate_fiscal_code(person):
     months = {1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "H",7: "L", 8: "M", 9: "P", 10: "R", 11: "S", 12: "T"}
     month = int(date[1])        #convert to int as it was a string and cant check string in dict
     if month > 12 or month < 1:
-        return ValueError
+        return ValueError           #error check
 #add the letter
     letters_and_numbers+=months[month]
     '''(2 numbers) males = if day less than 10 put '0' infront
@@ -136,22 +136,22 @@ def generate_fiscal_code(person):
     return fiscal_code
 
 '''------------------------------Test Code------------------------------
+'nathan crowley M 23/05/2000'
 
 To test correctly, 
     - run the program
-    - enter the first person you want to create
+    - enter the first person you want to create - Create a person object "firstname,surname,gender,DOB(DD/MM/YYYY)
     - you will be asked if you would like to continue? (Y/N)
     - when completed the program will return a dictionary of people and their fiscal codes
     
 '''
 #create people objects
 list_of_people = {}
-user_input = input('Create a person object(firstname,surname,gender,DOB) [ENTER to exit]>>>')
+user_input = input('Create a person object "firstname,surname,gender,DOB(DD/MM/YYYY)" [ENTER to exit]>>>')
 while user_input != '':
     user_input = user_input.split()
     # create person object
-    person = Person('{}'.format(user_input[0]), '{}'.format(user_input[1]), '{}'.format(user_input[2]),
-                    '{}'.format(user_input[3]))
+    person = Person('{}'.format(user_input[0]), '{}'.format(user_input[1]), '{}'.format(user_input[2]),'{}'.format(user_input[3]))
     # generate their fiscal code
     list_of_people[person.get_fullname()] = generate_fiscal_code(person)
     user_input = input('Create another person object(firstname,surname,gender,DOB) [ENTER to exit]>>>')
