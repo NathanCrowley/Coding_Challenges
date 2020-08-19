@@ -23,9 +23,9 @@ class basic_calculator{
 		//2)
 		String[] items = user.split(" ");
 		//3)
-		String op = items[1];
-		char operator = op.charAt(0);
-		int x = Integer.parseInt(items[0]);
+		String op = items[1];							//use string so we can use op.charAt(0) method.
+		char operator = op.charAt(0);					// needs to be a char so we can use ==.
+		int x = Integer.parseInt(items[0]);				
 		int y = Integer.parseInt(items[2]);
 		float answer = 0;
 		if (operator == '+'){
@@ -44,6 +44,6 @@ class basic_calculator{
 			//divide
 			answer = x/y;
 		}
-		System.out.println(user+" = "+answer);
+		System.out.println(user+" = "+answer);			//return the answer
 	}
 }
