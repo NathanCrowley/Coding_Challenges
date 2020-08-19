@@ -1,4 +1,5 @@
 /*
+Nathan Crowley - 15/8/20202
 function that takes two numbers and an operatora and returns the calculations answer.
 	syntax = 2 + 2
 			12 - 8
